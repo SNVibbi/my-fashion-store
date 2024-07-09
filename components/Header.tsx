@@ -5,7 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { BsCartDash } from "react-icons/bs";
 
 const Header = () => (
-  <header className="bg-orange-500 h-full text-white py-8 px-4">
+  <header className="h-full text-white py-8 px-4">
     <div className="container mx-auto sm:w-full md:w-full flex justify-between items-center">
       <nav className='flex items-center space-x-7 font-bold'>
         <Image src={Hero} alt='Hero' />

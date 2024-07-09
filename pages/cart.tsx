@@ -23,9 +23,9 @@ const Cart = () => {
     <Layout>
       <div className="container mx-auto py-8">
         <h1 className="text-2xl font-bold mb-4">Cart</h1>
-        <div className="bg-white shadow-md rounded-lg p-4">
+        <div className="bg-white p-4">
           {cartItems.map(item => (
-            <div key={item.id} className="border-t border-orange-300 border-spacing-1 mt-2 flex space-x-5 items-center mb-4">
+            <div key={item.id} className="border-t border-amber-400 border-spacing-1 mt-2 flex space-x-5 items-center mb-4">
               <Image 
                 src={item.image} width={100}
                 height={100} alt={item.name} className=" mt-5" />
@@ -50,7 +50,7 @@ const Cart = () => {
               <button className="ml-4 text-red-500" onClick={() => removeItem(item.id)}>Remove</button>
             </div>
           ))}
-          <div className="flex  justify-between w-1/3 items-center border-t border-orange-300 pt-4 mt-4">
+          <div className="flex  justify-between w-1/3 items-center border-t border-amber-400 pt-4 mt-4">
             <div>
               <p>Subtotal</p>
               <p>Discount</p>
@@ -63,7 +63,7 @@ const Cart = () => {
             </div>
           </div>
           <Link href="/checkout">
-          <button className="bg-orange-500 text-white py-2 px-4 mt-4 w-1/3 font-semibold text-xl">Checkout</button>
+          <button className="text-white py-2 px-4 mt-4 w-1/3 font-semibold text-xl" style={{backgroundColor: '#9E6924'}}>Checkout</button>
           </Link>
         </div>
       </div>

@@ -10,6 +10,7 @@ import HeroContainer from '../public/hero-container.jpg'
 import NeckTop from '../public/neck-top.jpg'
 import PrettyGown from '../public/pretty-gown.jpg' 
 import FlowerTop from '../public/flower-top.jpg'
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 export default function Home() {
   return (
@@ -31,8 +32,11 @@ export default function Home() {
         </section>
         <section className="py-8">
           <div className='flex justify-between mb-4'>
-            <h2 className="text-2xl font-semibold">Trending Products</h2>
-            <button className="text-orange-300 text-xl">See all products</button>
+            <h2 className="text-2xl font-semibold px-10">Trending Products</h2>
+            <div className='flex items-center space-x-1 px-10'>
+             <button className="text-orange-300 text-xl">See all products</button>
+             <p className='text-2xl text-orange-300'><IoIosArrowRoundForward /></p>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className=" px-2 py-2 text-center">

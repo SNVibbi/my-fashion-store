@@ -31,7 +31,7 @@ const Cart = () => {
                 height={100} alt={item.name} className=" mt-5" />
               <div className="flex flex-col">
                 <p className='text-3xl mb-8 font-semibold'>{item.name}</p>
-                <div className="flex items-center space-x-3 mt-2">
+                <div className="flex flex-c items-center space-x-3 mt-2">
                   <label className="mr-2">Size</label>
                   <select className="border rounded px-2 py-1" value={item.size}>
                     <option value="S">S</option>
@@ -50,7 +50,7 @@ const Cart = () => {
               <button className="ml-4 text-red-500" onClick={() => removeItem(item.id)}>Remove</button>
             </div>
           ))}
-          <div className="flex  justify-between items-center border-t border-orange-300 pt-4 mt-4">
+          <div className="flex  justify-between w-1/3 items-center border-t border-orange-300 pt-4 mt-4">
             <div>
               <p>Subtotal</p>
               <p>Discount</p>
@@ -63,7 +63,7 @@ const Cart = () => {
             </div>
           </div>
           <Link href="/checkout">
-          <button className="bg-orange-500 text-white py-2 px-4 mt-4 w-full">Checkout</button>
+          <button className="bg-orange-500 text-white py-2 px-4 mt-4 w-1/3 font-semibold text-xl">Checkout</button>
           </Link>
         </div>
       </div>

@@ -9,7 +9,9 @@ import GoodExperience from '../public/good-experience.jpg'
 import HeroContainer from '../public/hero-container.jpg'
 import NeckTop from '../public/neck-top.jpg'
 import PrettyGown from '../public/pretty-gown.jpg' 
+import HalfFlowerTop from '../public/half-flower-top.jpg'
 import FlowerTop from '../public/flower-top.jpg'
+import BlueDinner from '../public/blue-dinner.jpg'
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 export default function Home() {
@@ -43,7 +45,7 @@ export default function Home() {
               <Image src={BrandedShirt} alt="Product 1" className="mx-auto" />
               <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
               <div className='flex justify-between mb-2'>
-                <p className='text-wrap'>Warning <br /> branded Shirt</p>
+                <p className='text-wrap'>Warning  branded Shirt</p>
                 <p>XXL</p>
               </div>
               <div className='flex justify-between '>
@@ -59,11 +61,11 @@ export default function Home() {
               <Image src={DinnerDress} alt="Product 2" className="mx-auto" />
               <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
               <div className='flex justify-between mb-2'>
-                <p className='text-wrap'>Black dinner <br />dress</p>
+                <p className='text-wrap'>Black dinner dress</p>
                 <p>M</p>
               </div>
               <div className='flex justify-between '>
-                <p>$10</p>
+                <p>$25</p>
                 <button className="flex space-x-4 bg-slate-100 text-orange-300 py-1 px-3 rounded-full">
                    <p>+</p>
                    <p>Add to cart</p>
@@ -72,14 +74,14 @@ export default function Home() {
               </div>
             </div>
             <div className=" px-2 py-2 text-center">
-              <Image src={FlowerTop} alt="Product 3" className="mx-auto" />
+              <Image src={HalfFlowerTop} alt="Product 3" className="mx-auto" />
               <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
               <div className='flex justify-between mb-2'>
-                <p className='text-wrap'>One-sided flower <br /> top</p>
+                <p className='text-wrap'>One-sided flower  top</p>
                 <p>M</p>
               </div>
               <div className='flex justify-between '>
-                <p>$10</p>
+                <p>$15</p>
                 <button className="flex space-x-4 bg-slate-100 text-orange-300 py-1 px-3 rounded-full">
                    <p>+</p>
                    <p>Add to cart</p>
@@ -88,10 +90,42 @@ export default function Home() {
               </div>
             </div>
             <div className=" px-2 py-2 text-center">
-              <Image src={BrandedShirt} alt="Product 2" className="mx-auto" />
+              <Image src={NeckTop} alt="Product 4" className="mx-auto" />
               <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
               <div className='flex justify-between mb-2'>
-                <p className='text-wrap'>Warning <br /> branded Shirt</p>
+                <p className='text-wrap'>White halter  neck top</p>
+                <p>XL</p>
+              </div>
+              <div className='flex justify-between '>
+                <p>$25</p>
+                <button className="flex space-x-4 bg-slate-100 text-orange-300 py-1 px-3 rounded-full">
+                   <p>+</p>
+                   <p>Add to cart</p>
+                </button>
+              </div>
+              </div>
+            </div>
+            <div className=" px-2 py-2 text-center">
+              <Image src={PrettyGown} alt="Product 5" className="mx-auto" />
+              <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
+              <div className='flex justify-between mb-2'>
+                <p className='text-wrap'>Flowery  pattern gown</p>
+                <p>S</p>
+              </div>
+              <div className='flex justify-between '>
+                <p>$25</p>
+                <button className="flex space-x-4 bg-slate-100 text-orange-300 py-1 px-3 rounded-full">
+                   <p>+</p>
+                   <p>Add to cart</p>
+                </button>
+              </div>
+              </div>
+            </div>
+            <div className=" px-2 py-2 text-center">
+              <Image src={BlueHoodie} alt="Product 6" className="mx-auto" />
+              <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
+              <div className='flex justify-between mb-2'>
+                <p className='text-wrap'>Blue Hoodie</p>
                 <p>XXL</p>
               </div>
               <div className='flex justify-between '>
@@ -104,11 +138,11 @@ export default function Home() {
               </div>
             </div>
             <div className=" px-2 py-2 text-center">
-              <Image src={BrandedShirt} alt="Product 2" className="mx-auto" />
+              <Image src={FlowerTop} alt="Product 7" className="mx-auto" />
               <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
               <div className='flex justify-between mb-2'>
-                <p className='text-wrap'>Warning <br /> branded Shirt</p>
-                <p>XXL</p>
+                <p className='text-wrap'>Flowery Top</p>
+                <p>XL</p>
               </div>
               <div className='flex justify-between '>
                 <p>$10</p>
@@ -119,6 +153,23 @@ export default function Home() {
               </div>
               </div>
             </div>
+            <div className=" px-2 py-2 text-center">
+              <Image src={BlueDinner} alt="Product 8" className="mx-auto" />
+              <div className='bg-orange-800 py-3 px-4 rounded-3xl mt-1'>
+              <div className='flex justify-between mb-2'>
+                <p className='text-wrap'>Blue Dinner gown</p>
+                <p>L</p>
+              </div>
+              <div className='flex justify-between '>
+                <p>$10</p>
+                <button className="flex space-x-4 bg-slate-100 text-orange-300 py-1 px-3 rounded-full">
+                   <p>+</p>
+                   <p>Add to cart</p>
+                </button>
+              </div>
+              </div>
+            </div>
+            <button className='text-2xl font-semibold underline text-orange-400'>See more</button>
           </div>
         </section>
       </div>

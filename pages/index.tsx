@@ -17,7 +17,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 export default function Home() {
   return (
     <Layout>
-        <section className="relative w-full max-h-screen flex flex-col justify-center">
+        {/* <section className="relative w-full max-h-screen flex flex-col justify-center">
           <Image 
             fill
             priority
@@ -29,11 +29,11 @@ export default function Home() {
           />
           <div className='relative z-10 pt-32 md:pt-0 md:top-1/4 lg:top-1/3 max-w-7xl mx-auto '>
             <div className='max-w-2xl py-20 px-4 flex flex-col gap-8 md:max-xl md:max-xl:rounded-1xl'>
-              <h1 className="text-5xl text-white -ml-20 md:6xl sm:-ml-4 font-semibold">GET YOUR FASHIONABLE DRESSES HERE AT A DISCOUNTED PRICE</h1>
-              <p className='-ml-20 sm:-ml-4 text-gray-200 text-xl max-w-xl'>Your No 1 fashion online store is here at your service.</p>
+              <h1 className="text-xl text-white -ml-10 md:6xl sm:-ml-6 sm:text-lg  font-semibold  lg:-ml-10 lg:text-5xl md:text-5xl lg-justify-normal ">GET YOUR FASHIONABLE DRESSES HERE AT A DISCOUNTED PRICE</h1>
+              <p className='-ml-20 sm:-ml-4 text-gray-200 text-xl max-w-xl lg:-ml-10 lg-justify-normal'>Your No 1 fashion online store is here at your service.</p>
             </div>
           </div>
-        </section>
+        </section> */}
         <div className="container mx-auto">
         <section className="flex flex-wrap  mt-4 mb-4 justify-center gap-10 py-8 sm:gap-5">
           <div className="text-center m-4">

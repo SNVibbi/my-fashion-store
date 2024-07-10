@@ -17,7 +17,7 @@ const Checkout = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto w-screen py-8">
         <h1 className="text-2xl font-bold mb-4">Checkout</h1>
         <div className="flex flex-wrap space-x-8 ">
           <div className="flex-1 bg-white border-t border-amber-400 p-4 mr-4">

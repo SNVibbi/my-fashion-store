@@ -21,7 +21,7 @@ const Cart = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto px-5 py-10 w-full">
         <h1 className="text-2xl font-bold mb-4">Cart</h1>
         <div className="bg-white p-4">
           {cartItems.map(item => (

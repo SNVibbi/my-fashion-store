@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Layout from '../components/Layout';
+import Layout from '@/components/Layout';
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Cart = () => {
@@ -21,52 +21,65 @@ const Cart = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-5 py-10 w-full">
-        <h1 className="text-2xl font-bold mb-4">Cart</h1>
-        <div className="bg-white p-4">
-          {cartItems.map(item => (
-            <div key={item.id} className="border-t border-amber-400 border-spacing-1 mt-2 flex space-x-5 items-center mb-4">
-              <Image 
-                src={item.image} width={100}
-                height={100} alt={item.name} className=" mt-5" />
-              <div className="flex flex-col">
-                <p className='text-3xl mb-8 font-semibold'>{item.name}</p>
-                <div className="flex flex-c items-center space-x-3 mt-2">
-                  <label className="mr-2">Size</label>
-                  <select className="border rounded px-2 py-1" value={item.size}>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                  </select>
-                <div className="flex items-center border">
-                  <button className="px-2" onClick={() => updateQuantity(item.id, -1)} disabled={item.quantity <= 1}>-</button>
-                  <span className="px-4">{item.quantity}</span>
-                  <button className="px-2" onClick={() => updateQuantity(item.id, 1)}>+</button>
+      <main className="min-h-screen md:p-5" style={{ backgroundColor: '#9E6924'}}>
+        <div className="container mx-auto px-4 py-4 md:px-8 md:py-8">
+          <div className="bg-white p-6 rounded-lg shadow-lg md:p-12 md:gap-3">
+            <h1 className="text-2xl font-bold mb-6 md:text-4xl">Cart</h1>
+            {cartItems.map(item => (
+              <div key={item.id} className="flex space-x-3 justify-between md:flex-row items-center md:justify-between border-t pt-4 mt-4" style={{ borderBlockColor: '#e99629'}}>
+                <Image 
+                  src={item.image} width={100}
+                  height={100} alt={item.name} className="mb-4 md:mb-10" />
+                <div>
+                <div className="flex flex-col md:flex-col md:justify-between ">
+                  <p className='text-lg mb-4 md:mb-4 md:text-3xl font-semibold'>{item.name}</p>
+                  <div className="flex items-center mb-4 md:mb-3">
+                    <label className="mr-2 text-sm md:text-2xl">Size</label>
+                    <select className="border rounded text-sm md:text-2xl md:px-3 " value={item.size} readOnly>
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                    </select>
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <label className="mr-2 md:text-2xl">Quantity</label>
+                    <div className="flex border rounded">
+                      <button className="px-1 md:px-3 md:text-xl" onClick={() => updateQuantity(item.id, -1)} disabled={item.quantity <= 1}>-</button>
+                      <span className="px-1 md:px-3 md:text-xl">{item.quantity}</span>
+                      <button className="px-1 md:px-3 md:text-xl" onClick={() => updateQuantity(item.id, 1)}>+</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div className="flex flex-col items-center md:items-end md:flex-row md:space-x-4">
+                  <div className='flex flex-col justify-between gap-7 text-sm font-semibold'>
+                    <button className="mb-4 md:mb-3 md:text-3xl text-2xl" onClick={() => removeItem(item.id)}>X</button>
+                    <p className="font-bold md:text-2xl">${item.price * item.quantity}</p>
+                  </div>
                 </div>
               </div>
+            ))}
+            <div className='flex flex-col items-end gap-3 mt-4 border-t mb-2 space-x-6 md:gap-7 md:text-2xl' style={{ borderBlockColor: '#e99629'}}>
+              <div className='flex justify-between gap-12 mt-3'>
+                <p>Subtotal</p>
+                <p>${subtotal}</p>
               </div>
-              <p>${item.price * item.quantity}</p>
-              <button className="ml-4 text-red-500" onClick={() => removeItem(item.id)}>Remove</button>
-            </div>
-          ))}
-          <div className="flex  justify-between w-1/3 items-center border-t border-amber-400 pt-4 mt-4">
-            <div>
-              <p>Subtotal</p>
-              <p>Discount</p>
-              <p>Total</p>
-            </div>
-            <div>
-              <p>${subtotal}</p>
-              <p>$0</p>
-              <p>${subtotal}</p>
+              <div className='flex justify-between gap-12'>
+                <p>Discount</p>
+                <p>$0</p>
+              </div>
+              <div className='flex justify-between gap-12 md:border-t' style={{ borderBlockColor: '#e99629'}}>
+                <p>Total</p>
+                <p>${subtotal}</p>
+              </div>
+              <Link href="/checkout">
+                <button className="text-white text-center py-2 px-10 mt-6 rounded-md font-semibold flex justify-items-end gap-3" style={{ backgroundColor: '#9E6924'}}>Checkout</button>
+              </Link>
             </div>
           </div>
-          <Link href="/checkout">
-          <button className="text-white py-2 px-4 mt-4 w-1/3 font-semibold text-xl" style={{backgroundColor: '#9E6924'}}>Checkout</button>
-          </Link>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };

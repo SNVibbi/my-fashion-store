@@ -35,7 +35,7 @@ const Cart = () => {
                   <p className='text-lg mb-4 md:mb-4 md:text-3xl font-semibold'>{item.name}</p>
                   <div className="flex items-center mb-4 md:mb-3">
                     <label className="mr-2 text-sm md:text-2xl">Size</label>
-                    <select className="border rounded text-sm md:text-2xl md:px-3 " value={item.size} readOnly>
+                    <select className="border rounded text-sm md:text-2xl md:px-3 " value={item.size}>
                       <option value="S">S</option>
                       <option value="M">M</option>
                       <option value="L">L</option>

@@ -41,8 +41,8 @@ export default function Home() {
 
   return (
     <Layout>
-      <section className="relative flex flex-col justify-center bg-cover bg-center" style={{ backgroundImage: `url(${HeroContainer.src})` }}>
-        <div className="relative z-10 pt-8 md:pt-0 md:top-1/4 lg:top-1/3 max-w-7xl mx-auto bg-opacity-75 bg-amber-900 p-6 rounded-lg">
+      <section className="relative flex flex-col justify-center bg-cover bg-center " style={{ backgroundImage: `url(${HeroContainer.src})` }}>
+        <div className="relative z-10 pt-8 md:pt-0 md:top-1/4 lg:top-1/3 max-w-7xl mx-auto b p-6 rounded-lg bg-opacity-75 bg-amber-900">
           <div className="max-w-2xl py-20 px-4 flex flex-col gap-8">
             <h1 className="text-3xl md:text-5xl lg:text-6xl text-white font-bold">GET YOUR FASHIONABLE DRESSES HERE AT A DISCOUNTED PRICE</h1>
             <p className="text-xl md:text-2xl text-gray-200">Your No 1 fashion online store is here at your service.</p>

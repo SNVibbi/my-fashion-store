@@ -14,8 +14,8 @@ const Header = () => {
   const { cartItemCount } = useCart();
 
   return (
-    <header className="text-white py-4" style={{ backgroundColor: '#9E6924' }}>
-      <div className="container mx-auto flex justify-between items-center px-4">
+    <header className="text-white py-4 md:text-2xl lg:text-4xl lg:px-6" style={{ backgroundColor: '#9E6924' }}>
+      <div className="container mx-auto flex justify-between items-center px-4 lg:px-6 lg:py-6">
         <div className="flex items-center">
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <HiX className="text-3xl" /> : <HiMenu className="text-3xl" />}
@@ -27,12 +27,12 @@ const Header = () => {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="text-xl md:text-3xl"><CiSearch /></button>
+          <button className="text-xl md:text-3xl lg:text-5xl"><CiSearch /></button>
           <Link href="/cart">
-            <button className="relative text-xl md:text-3xl">
+            <button className="relative text-xl md:text-3xl lg:text-5xl">
               <BsCartDash />
               {cartItemCount > 0 && (
-                <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 md:h-7 md:w-7 lg:h-9 lg:w-9 flex items-center justify-center">
                   {cartItemCount}
                 </span>
               )}

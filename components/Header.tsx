@@ -14,7 +14,7 @@ const Header = () => {
   const { cartItemCount } = useCart();
 
   return (
-    <header className="text-white py-4 md:text-2xl lg:text-4xl lg:px-6" style={{ backgroundColor: '#9E6924' }}>
+    <header className="text-white py-4 md:text-2xl lg:text-3xl lg:px-6" style={{ backgroundColor: '#9E6924' }}>
       <div className="container mx-auto flex justify-between items-center px-4 lg:px-6 lg:py-6">
         <div className="flex items-center">
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>

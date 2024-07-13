@@ -15,7 +15,6 @@ import BlueDinner from '../public/blue-dinner.jpg';
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { BsCartDash } from "react-icons/bs";
 import { useCart } from '../components/CartAdd';
-import Link from 'next/link';
 
 interface Product {
   id: number;
@@ -67,56 +66,44 @@ export default function Home() {
         <section className="py-8">
           <div className="flex justify-between mb-4 px-4">
             <h2 className="text-2xl font-semibold">Trending Products</h2>
+            <div>
+              <button className="flex items-center space-x-1 text-orange-300 text-xl">
+                <span>See all products</span>
+                <IoIosArrowRoundForward />
+              </button>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
             {products.map((product) => (
               <div key={product.id} className="px-2 py-2 text-center">
-                <Link href={`/product/${product.id}`}>
-                  <button>
-                    <Image src={product.image} alt={product.name} className="mx-auto" width={200} height={200} />
-                    <div className="py-3 px-4 rounded-3xl mt-1" style={{ background: '#9E6924' }}>
-                      <div className="flex justify-between mb-2">
-                        <p className="text-wrap">{product.name}</p>
-                        <p>{product.size}</p>
-                      </div>
-                      <div className="flex justify-between">
-                        <p>${product.price}</p>
-                        <button
-                          className="flex items-center bg-slate-100 text-orange-300 py-1 px-3 rounded-full"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            addToCart({
-                              id: product.id,
-                              name: product.name,
-                              size: product.size,
-                              price: product.price,
-                              image: product.image,
-                              quantity: 1,
-                            });
-                          }}
-                        >
-                          <span className="hidden md:inline">+</span>
-                          <span className="hidden md:inline">Add to cart</span>
-                          <BsCartDash className="md:hidden text-lg" />
-                        </button>
-                      </div>
-                    </div>
-                  </button>
-                </Link>
+                <Image src={product.image} alt={product.name} className="mx-auto" />
+                <div className="py-4 px-4 rounded-3xl mt-1 bg-yellow-700">
+                  <div className="flex justify-between mb-2">
+                    <p className="text-wrap">{product.name}</p>
+                    <p>{product.size}</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <p>${product.price}</p>
+                    <button
+                      className="flex items-center bg-slate-100 text-orange-300 py-1 px-3 rounded-full"
+                      onClick={() => addToCart({
+                        id: product.id,
+                        name: product.name,
+                        size: product.size,
+                        price: product.price,
+                        image: product.image,
+                        quantity: 1,
+                      })}
+                    >
+                      <span className="hidden md:inline">+</span>
+                      <span className="hidden md:inline">Add to cart</span>
+                      <BsCartDash className="md:hidden text-lg" />
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-          {/* <div className="flex justify-center mt-8">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNumber => (
-              <button
-                key={pageNumber}
-                onClick={() => handlePageChange(pageNumber)}
-                className={`mx-1 px-3 py-1 rounded-full ${pageNumber === page ? 'bg-amber-900 text-white' : 'bg-white text-amber-900'}`}
-              >
-                {pageNumber}
-              </button>
-            ))}
-          </div> */}
         </section>
       </div>
     </Layout>

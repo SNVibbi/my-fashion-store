@@ -14,7 +14,7 @@ const Header = () => {
   const { cartItemCount } = useCart();
 
   return (
-    <header className="text-white py-4 md:text-2xl lg:text-3xl lg:px-5" style={{ backgroundColor: '#9E6924' }}>
+    <header className="text-white py-4 md:text-2xl lg:text-3xl lg:px-5 bg-yellow-700">
       <div className="container mx-auto flex justify-between items-center px-4 lg:px-5 lg:py-5">
         <div className="flex items-center">
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
@@ -52,6 +52,12 @@ const Header = () => {
             <div className='flex items-center space-x-6'>
               <AiOutlineProduct />
               <p>Products</p>
+            </div>
+          </Link>
+          <Link href="/cart">
+            <div className='flex items-center space-x-6'>
+              <BsCartDash />
+              <p>Cart</p>
             </div>
           </Link>
         </nav>

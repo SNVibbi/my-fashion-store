@@ -33,11 +33,21 @@ const Checkout = () => {
     setContactInfo(e.target.value);
   };
 
+  const handleDeliveryTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setDeliveryType(e.target.value);
+  };
+
+  const handlePaymentMethodChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setPaymentMethod(e.target.value);
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission logic
     console.log('Shipping Address:', shippingAddress);
     console.log('Contact Info:', contactInfo);
+    console.log('Delivery Type:', deliveryType);
+    console.log('Payment Method:', paymentMethod);
   };
 
   return (
@@ -72,7 +82,7 @@ const Checkout = () => {
               </div>
               <div className="border-t mt-6 border-yellow-700 mb-4">
                 <h2 className="font-bold text-2xl mt-8 mb-4">Delivery Type</h2>
-                <select className="border border-yellow-700 mb-4 rounded-full w-full px-8 py-4" value={deliveryType} onChange={(e) => setDeliveryType(e.target.value)}>
+                <select className="border border-yellow-700 mb-4 rounded-full w-full px-8 py-4" value={deliveryType} onChange={handleDeliveryTypeChange}>
                   <option value="Express">Express</option>
                   <option value="Standard">Standard</option>
                   <option value="Pickup">Pickup</option>
@@ -80,7 +90,7 @@ const Checkout = () => {
               </div>
               <div className=" mb-4 mt-6 border-t border-yellow-700 ">
                 <h2 className="font-bold text-2xl mt-8 mb-4">Payment Method</h2>
-                <select className="border border-yellow-700 w-full rounded-full px-8 py-4" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
+                <select className="border border-yellow-700 w-full rounded-full px-8 py-4" value={paymentMethod} onChange={handlePaymentMethodChange}>
                   <option value="Paypal">Paypal</option>
                   <option value="Credit Card">Credit Card</option>
                   <option value="Bank Transfer">Bank Transfer</option>

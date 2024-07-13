@@ -66,12 +66,6 @@ export default function Home() {
         <section className="py-8">
           <div className="flex justify-between mb-4 px-4">
             <h2 className="text-2xl font-semibold">Trending Products</h2>
-            <div>
-              <button className="flex items-center space-x-1 text-orange-300 text-xl">
-                <span>See all products</span>
-                <IoIosArrowRoundForward />
-              </button>
-            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
             {products.map((product) => (

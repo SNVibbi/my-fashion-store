@@ -96,7 +96,7 @@ const Products = () => {
           </button>
         ))}
       </div>
-      <Link href='/' alt={"home"} className='bg-yellow-700 text-gray-200 rounded px-1 flex items-center'>Back Home</Link>
+      <Link href='/'  className='bg-yellow-700 text-gray-200 rounded px-1 flex items-center'>Back Home</Link>
     </section>
   );
 };

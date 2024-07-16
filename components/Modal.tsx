@@ -11,8 +11,8 @@ const Modal = ({ show, onClose, children }: ModalProps) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-        <button className="absolute top-2 right-2 text-black" onClick={onClose}>×</button>
+      <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+        <button className="text-right text-black" onClick={onClose}>X</button>
         {children}
       </div>
     </div>

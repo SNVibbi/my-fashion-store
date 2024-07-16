@@ -1,21 +1,10 @@
 import Layout from '@/components/Layout';
-import { useState } from 'react';
+import { useCart } from '@/components/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'Warning branded Shirt', size: 'M', quantity: 1, price: 10, image: '/branded-shirt.jpg' },
-    { id: 2, name: 'Flowery pattern gown', size: 'S', quantity: 1, price: 25, image: '/pretty-gown.jpg' },
-  ]);
-
-  const updateQuantity = (id: number, delta: number) => {
-    setCartItems(cartItems.map(item => item.id === id ? { ...item, quantity: item.quantity + delta } : item));
-  };
-
-  const removeItem = (id: number) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
-  };
+  const { cartItems, updateQuantity, removeFromCart } = useCart();
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -31,30 +20,30 @@ const Cart = () => {
                   src={item.image} width={100}
                   height={100} alt={item.name} className="mb-4 md:mb-10 lg:mb15" />
                 <div>
-                <div className="flex flex-col md:flex md:justify-between ">
-                  <p className='text-lg mb-4 md:mb-4 md:text-3xl lg:text-4xl font-semibold'>{item.name}</p>
-                  <div className="flex items-center mb-4 md:mb-3 lg:mb-5">
-                    <label className="mr-2 text-sm md:text-2xl lg:text-3xl">Size</label>
-                    <select className="border rounded text-sm md:text-2xl md:px-3 lg:text-3xl lg:px-4 " value={item.size}>
-                      <option value="S">S</option>
-                      <option value="M">M</option>
-                      <option value="L">L</option>
-                      <option value="XL">XL</option>
-                    </select>
-                  </div>
-                  <div className="flex items-center text-sm ">
-                    <label className="mr-2 md:text-2xl lg:text-3xl">Quantity</label>
-                    <div className="flex border rounded">
-                      <button className="px-1 md:px-3 lg:px-4 md:text-xl lg:text-2xl" onClick={() => updateQuantity(item.id, -1)} disabled={item.quantity <= 1}>-</button>
-                      <span className="px-1 md:px-3 lg:px-4 md:text-xl lg:tex-2xl">{item.quantity}</span>
-                      <button className="px-1 md:px-3 lg:px-4 md:text-xl lg:text-2xl" onClick={() => updateQuantity(item.id, 1)}>+</button>
+                  <div className="flex flex-col md:flex md:justify-between ">
+                    <p className='text-lg mb-4 md:mb-4 md:text-3xl lg:text-4xl font-semibold'>{item.name}</p>
+                    <div className="flex items-center mb-4 md:mb-3 lg:mb-5">
+                      <label className="mr-2 text-sm md:text-2xl lg:text-3xl">Size</label>
+                      <select className="border rounded text-sm md:text-2xl md:px-3 lg:text-3xl lg:px-4 " value={item.size} disabled>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <div className="flex items-center text-sm ">
+                      <label className="mr-2 md:text-2xl lg:text-3xl">Quantity</label>
+                      <div className="flex border rounded">
+                        <button className="px-1 md:px-3 lg:px-4 md:text-xl lg:text-2xl" onClick={() => updateQuantity(item.id, -1)} disabled={item.quantity <= 1}>-</button>
+                        <span className="px-1 md:px-3 lg:px-4 md:text-xl lg:tex-2xl">{item.quantity}</span>
+                        <button className="px-1 md:px-3 lg:px-4 md:text-xl lg:text-2xl" onClick={() => updateQuantity(item.id, 1)}>+</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                </div>
                 <div className="flex flex-col items-center md:items-end md:flex-row md:space-x-4">
                   <div className='flex flex-col justify-between gap-7 text-sm font-semibold'>
-                    <button className="mb-4 md:mb-3 md:text-3xl text-2xl" onClick={() => removeItem(item.id)}>X</button>
+                    <button className="mb-4 md:mb-3 md:text-3xl text-2xl" onClick={() => removeFromCart(item.id)}>X</button>
                     <p className="font-bold md:text-2xl">${item.price * item.quantity}</p>
                   </div>
                 </div>

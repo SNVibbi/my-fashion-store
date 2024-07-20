@@ -3,11 +3,12 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface CartItem {
   id: number;
+  photo: { url: string }[];
   name: string;
   size: string;
   quantity: number;
   price: number;
-  image: StaticImageData;
+  image: string;
 }
 
 interface CartContextType {
@@ -58,8 +59,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </CartContext.Provider>
   );
-};
 
+};
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
@@ -67,3 +68,4 @@ export const useCart = () => {
   }
   return context;
 };
+

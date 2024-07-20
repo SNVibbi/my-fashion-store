@@ -15,7 +15,7 @@ app.prepare().then(() => {
       target: 'https://api.timbu.cloud',
       changeOrigin: true,
       pathRewrite: {
-        '^/api': '', // remove /api prefix
+        '^/api': '', 
       },
     })
   );

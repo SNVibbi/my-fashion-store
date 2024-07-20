@@ -46,7 +46,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       }
     });
     setAlert('Item added to cart');
-    setTimeout(() => setAlert(null), 3000); // Remove alert after 3 seconds
+    setTimeout(() => setAlert(null), 3000); 
   };
 
   const removeFromCart = (id: number) => {

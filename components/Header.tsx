@@ -49,7 +49,7 @@ const Header = () => {
               <p>Home</p>
             </div>
           </Link>
-          <Link href="/#products">
+          <Link href="/products">
             <div className='flex items-center space-x-6'>
               <AiOutlineProduct />
               <p>Products</p>
